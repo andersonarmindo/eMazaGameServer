@@ -15,3 +15,8 @@ use \App\Http\Controllers\GenericController;
 */
 
 Route::get('/', [GenericController::class, 'landing']);
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
