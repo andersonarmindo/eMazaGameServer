@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/subjects', [SubjectController::class, 'getdata']);
 
-Route::get('/questions', [QuestionController::class, 'getdata']);
+Route::apiResources([
+    'subjects'=> SubjectController::class,
+    'questions'=>QuestionController::class
+]);
