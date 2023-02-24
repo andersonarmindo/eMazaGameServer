@@ -15,6 +15,7 @@ use \App\Http\Controllers\GenericController;
 */
 
 Route::get('/', [GenericController::class, 'landing']);
+Route::get('/generate-token', [GenericController::class, 'generateToken']);
 
 
 Route::group(['prefix' => 'admin'], function () {

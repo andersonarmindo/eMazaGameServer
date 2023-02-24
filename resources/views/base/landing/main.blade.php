@@ -6,7 +6,12 @@
                     <h1 class="hero-title mt-0">Bem-vindo ao servidor do eMazaGame</h1>
                     <p class="hero-paragraph">Este servidor processa todas as informacoes utilizadas no aplicativo eMazaGame, e somente utilizadores permitidos tem acesso a area restrita deste servidor.</p>
                     <div class="hero-cta"><a class="button button-primary" href="https://play.google.com/store/apps/details?id=explicador.co.mz&hl=pt&gl=US&pli=1" target="_blank">Baixar App</a>
+                    @if(auth()->check())
+                            <a class="button" href="admin/profile">Perfil</a></div>
+                    @else
                         <a class="button" href="/admin">Entrar</a></div>
+
+                @endif
                 </div>
                 <div class="hero-figure anime-element">
                     <svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">

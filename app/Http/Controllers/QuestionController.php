@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Traits\HelperTrait;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+    use HelperTrait;
     public function index(Request $request){
-        return response()->json(['success'=> 'Perguntas retornadas com sucesso'], 200);
+        return $this->processQuestions($request);
     }
 
     public function store(Request $request){
